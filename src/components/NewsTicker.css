@@ -1,0 +1,17 @@
+/* src/components/NewsTicker.css */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 40s linear infinite; /* ← Slow speed, 40s per loop */
+  padding-left: 100%; /* Starts off-screen to the right */
+}
