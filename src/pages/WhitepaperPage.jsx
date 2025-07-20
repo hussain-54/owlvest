@@ -34,12 +34,12 @@ export default function WhitepaperPage() {
       </div>
 
       <div ref={viewerRef} className="w-full h-[80vh] mb-8">
-        <embed
-          src="/whitepaper/whitepaper.pdf"
-          type="application/pdf"
-          className="w-full h-full rounded-xl border-2 border-white"
-          title="OwlVest Whitepaper"
-        />
+      <iframe
+  src="/whitepaper/whitepaper.pdf"
+  className="w-full h-full rounded-xl border-2 border-white"
+  title="OwlVest Whitepaper"
+></iframe>
+
       </div>
     </div>
   );
