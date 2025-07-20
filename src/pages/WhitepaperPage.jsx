@@ -25,7 +25,7 @@ export default function WhitepaperPage() {
         </button>
 
         <a
-          href="/whitepaper/whitepaper.pdf"
+          href="/whitepaper.pdf"
           download="OwlVest-Whitepaper.pdf"
           className="bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition text-center"
         >
@@ -35,7 +35,7 @@ export default function WhitepaperPage() {
 
       <div ref={viewerRef} className="w-full h-[80vh] mb-8">
       <iframe
-  src="/whitepaper/whitepaper.pdf"
+  src="/whitepaper.pdf"
   className="w-full h-full rounded-xl border-2 border-white"
   title="OwlVest Whitepaper"
 ></iframe>
