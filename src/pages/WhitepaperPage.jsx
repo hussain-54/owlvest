@@ -21,12 +21,12 @@ export default function WhitepaperPage() {
           onClick={scrollToViewer}
           className="bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition"
         >
-           Read Online
+          📖 Read Online
         </button>
 
         <a
           href="/whitepaper/whitepaper.pdf"
-          download
+          download="OwlVest-Whitepaper.pdf"
           className="bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition text-center"
         >
           ⬇ Download PDF
@@ -36,6 +36,7 @@ export default function WhitepaperPage() {
       <div ref={viewerRef} className="w-full h-[80vh] mb-8">
         <embed
           src="/whitepaper/whitepaper.pdf"
+          type="application/pdf"
           className="w-full h-full rounded-xl border-2 border-white"
           title="OwlVest Whitepaper"
         />
