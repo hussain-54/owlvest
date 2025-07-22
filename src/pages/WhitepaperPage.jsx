@@ -3,10 +3,22 @@ import React, { useRef } from 'react';
 export default function WhitepaperPage() {
   const viewerRef = useRef(null);
 
+  // ✅ PDF served from your Vercel deployment
+  const pdfUrl = "https://owlwest-white-papaer-code.vercel.app/whitepaper.pdf";
+
   const scrollToViewer = () => {
     if (viewerRef.current) {
       viewerRef.current.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.setAttribute('download', 'OwlVest-Whitepaper.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -24,22 +36,20 @@ export default function WhitepaperPage() {
           📖 Read Online
         </button>
 
-        <a
-          href="/whitepaper.pdf"
-          download="OwlVest-Whitepaper.pdf"
-          className="bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition text-center"
+        <button
+          onClick={handleDownload}
+          className="bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition"
         >
           ⬇ Download PDF
-        </a>
+        </button>
       </div>
 
       <div ref={viewerRef} className="w-full h-[80vh] mb-8">
-      <iframe
-  src="/whitepaper.pdf"
-  className="w-full h-full rounded-xl border-2 border-white"
-  title="OwlVest Whitepaper"
-></iframe>
-
+        <iframe
+          src={pdfUrl}
+          className="w-full h-full rounded-xl border-2 border-white"
+          title="OwlVest Whitepaper"
+        ></iframe>
       </div>
     </div>
   );
