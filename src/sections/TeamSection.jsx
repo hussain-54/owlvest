@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 
 const team = [
   {
-    name: 'Talha',
+    name: 'Talha Aftab',
     role: 'Founder & CEO',
     image: '/team/17567382-eaa2-48f0-88c4-88471581caae.jpeg',
     bio: 'Visionary behind OwlVest, building startup access for everyone.',
   },
   {
     name: 'Bilal Aftab',
-    role: 'Co-Founder & CTO',
+    role: 'Co-Founder & COO',
     image: '/team/efe51179-1575-4b2d-ba59-55231670c79f.jpeg',
     bio: 'Leads product, engineering, and smart contract development.',
   },
