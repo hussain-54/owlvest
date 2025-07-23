@@ -8,7 +8,7 @@ export default function StatsPanel() {
   const [tokensSold, setTokensSold] = useState(456_789_000);
   const [contributors, setContributors] = useState(18233);
   const progress = ((tokensSold / TOTAL_PRESALE) * 100).toFixed(2);
-  const presaleEnd = new Date('2025-07-01T00:00:00Z');
+  const presaleEnd = new Date('2025-08-08T00:00:00Z');
 
   useEffect(() => {
     const interval = setInterval(() => {
