@@ -14,7 +14,7 @@ export default function Hero() {
   const progress = ((tokensSold / TOTAL_PRESALE) * 100).toFixed(0);
 
   // Define your presale end date here:
-  const presaleEnd = new Date('2025-08-08T00:00:00Z');
+  const presaleEnd = new Date('2025-08-12T00:00:00Z');
 
   useEffect(() => {
     if (inView) controls.start({ opacity: 1, y: 0, scale: 1 });
