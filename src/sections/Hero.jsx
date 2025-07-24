@@ -57,7 +57,10 @@ export default function Hero() {
             className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-xl shadow-xl"
           />
         </div>
-        {/* Presale Coming Soon Section */}
+       
+
+      </section>
+       {/* Presale Coming Soon Section */}
 <div className="mt-10 w-full flex flex-col items-center text-center">
   <motion.div
     initial={{ opacity: 0, scale: 0.9 }}
@@ -75,9 +78,6 @@ export default function Hero() {
     </button>
   </motion.div>
 </div>
-
-      </section>
-      
 
       {/* Custom Glow Styles */}
       <style>{`
