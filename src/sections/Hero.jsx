@@ -57,7 +57,27 @@ export default function Hero() {
             className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-xl shadow-xl"
           />
         </div>
+        {/* Presale Coming Soon Section */}
+<div className="mt-10 w-full flex flex-col items-center text-center">
+  <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.6 }}
+    className="bg-[#1A0038] p-8 rounded-2xl shadow-lg w-full max-w-lg border border-[#2D0A51]"
+  >
+    <h2 className="text-3xl font-extrabold text-white mb-4">🚀 Presale Coming Soon</h2>
+    <p className="text-gray-300 text-lg mb-6">
+      Get ready to be part of the future with <span className="text-white font-bold">Owlvest</span>.  
+      Stay tuned for updates!
+    </p>
+    <button className="glow-button px-6 py-3 bg-[#00F08F] text-black font-bold rounded-lg hover:bg-[#00d880] transition">
+      Notify Me
+    </button>
+  </motion.div>
+</div>
+
       </section>
+      
 
       {/* Custom Glow Styles */}
       <style>{`
