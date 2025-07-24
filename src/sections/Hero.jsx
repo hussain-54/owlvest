@@ -59,60 +59,6 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* Presale Stats */}
-      <div className="flex flex-col gap-6 items-center w-full max-w-2xl">
-        {/* Progress Box */}
-        <div className="bg-[#1B0E3F] w-full rounded-xl p-6 text-center shadow-md border border-[#2F1C55]">
-          <div className="flex justify-between items-center mb-2">
-            <h2 className="text-md font-bold text-white">Presale Progress</h2>
-            <h2 className="text-md font-bold text-[#00F08F]">{progress}%</h2>
-          </div>
-          <div className="w-full bg-[#322057] rounded-full h-4 overflow-hidden">
-            <div
-              className="h-full bg-[#00F08F] transition-all duration-500"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-          <p className="mt-2 text-sm text-gray-300">{tokensSold.toLocaleString()} OWL Sold / 1B OWL Total</p>
-        </div>
-
-        {/* Countdown Box */}
-        <div className="bg-[#1B0E3F] w-full rounded-xl p-6 text-center shadow-md border border-[#2F1C55]">
-          <h2 className="text-lg font-bold mb-6 text-white">⏰ Presale Ends In:</h2>
-          <Countdown
-            date={presaleEnd}
-            renderer={({ days, hours, minutes, seconds, completed }) => {
-              if (completed) {
-                // Render something when countdown ends
-                return <span className="text-white font-bold">Presale Ended</span>;
-              } else {
-                // Render countdown
-                return (
-                  <div className="flex justify-center gap-6 text-black">
-                    <div className="bg-[#00F08F] w-20 h-20 sm:w-24 sm:h-24 rounded-lg flex flex-col justify-center items-center font-bold text-xl sm:text-2xl">
-                      {days}
-                      <span className="text-xs sm:text-sm font-medium">Days</span>
-                    </div>
-                    <div className="bg-[#00F08F] w-20 h-20 sm:w-24 sm:h-24 rounded-lg flex flex-col justify-center items-center font-bold text-xl sm:text-2xl">
-                      {hours}
-                      <span className="text-xs sm:text-sm font-medium">Hours</span>
-                    </div>
-                    <div className="bg-[#00F08F] w-20 h-20 sm:w-24 sm:h-24 rounded-lg flex flex-col justify-center items-center font-bold text-xl sm:text-2xl">
-                      {minutes}
-                      <span className="text-xs sm:text-sm font-medium">Minutes</span>
-                    </div>
-                    <div className="bg-[#00F08F] w-20 h-20 sm:w-24 sm:h-24 rounded-lg flex flex-col justify-center items-center font-bold text-xl sm:text-2xl">
-                      {seconds}
-                      <span className="text-xs sm:text-sm font-medium">Seconds</span>
-                    </div>
-                  </div>
-                );
-              }
-            }}
-          />
-        </div>
-      </div>
-
       {/* Custom Glow Styles */}
       <style>{`
         .text-glow {
