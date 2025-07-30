@@ -77,13 +77,10 @@ export default function Hero() {
               Get ready to be part of the future with <span className="text-white font-bold">Owlvest</span>.  
               Stay tuned for updates!
             </p>
-            <button className="glow-button px-6 py-3 bg-[#00F08F] text-black font-bold rounded-lg hover:bg-[#00d880] transition">
-              Notify Me
-            </button>
-            <button
+            <button 
               onClick={() => setShowPresaleModal(false)}
-              className="mt-4 text-sm text-gray-400 hover:text-white"
-            >
+              className="glow-button px-6 py-3 bg-[#00F08F] text-black font-bold rounded-lg hover:bg-[#00d880] transition">
+            
               Close
             </button>
           </motion.div>
