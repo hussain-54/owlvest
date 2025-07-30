@@ -7,7 +7,7 @@ const Partner = () => {
       <header className="py-20 text-center px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-white">Partner With OwlVest</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-300">
-          Join our mission to decentralise investing and unlock global opportunity. Whether you're a DEX, influencer, KOL, VC, or crypto project — we want to build with you.
+          Join our mission to decentralise investing and unlock global opportunity. Whether you're a DEX, influencer, KOL, VC, or crypto project. We want to build with you.
         </p>
       </header>
 
@@ -17,27 +17,26 @@ const Partner = () => {
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              icon: "🤝",
-              title: "Co-Promotion Opportunities",
+               title: "Co-Promotion Opportunities",
               desc: "Get featured across our blog, socials, and global ambassador network.",
             },
             {
-              icon: "🚀",
+              
               title: "Priority Access",
               desc: "Early entry to exclusive presales and staking pools.",
             },
             {
-              icon: "📈",
+              
               title: "Community Exposure",
               desc: "Reach our growing user base through collaborations and Twitter Spaces.",
             },
             {
-              icon: "💼",
+             
               title: "Project Matching",
               desc: "Curated access to aligned backers, ambassadors, and project leads.",
             },
             {
-              icon: "🔒",
+             
               title: "Transparency & Commitment",
               desc: "We're community-driven and building for the long haul.",
             },
