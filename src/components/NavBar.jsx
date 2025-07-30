@@ -25,6 +25,31 @@ const navItems = [
     ]
   }
 ];
+<ul className="flex space-x-6">
+  {navItems.map((item, index) => (
+    <li key={index} className="relative group">
+      {!item.submenu ? (
+        <a href={item.href} className="text-white hover:text-gray-300">
+          {item.name}
+        </a>
+      ) : (
+        <>
+          <span className="cursor-pointer text-white hover:text-gray-300">
+            {item.name}
+          </span>
+          <ul className="absolute hidden group-hover:block bg-white shadow-md text-black mt-2 rounded z-50">
+            {item.submenu.map((subItem, subIndex) => (
+              <li key={subIndex} className="px-4 py-2 hover:bg-gray-100">
+                <a href={subItem.to}>{subItem.name}</a>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </li>
+  ))}
+</ul>
+
 
   const shorten = (addr) => addr?.slice(0, 6) + '...' + addr?.slice(-4);
 
