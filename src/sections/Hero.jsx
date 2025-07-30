@@ -13,7 +13,8 @@ export default function Hero() {
   const [contributors, setContributors] = useState(10000);
   const progress = ((tokensSold / TOTAL_PRESALE) * 100).toFixed(0);
 
-  // Define your presale end date here:
+  const [showPresaleModal, setShowPresaleModal] = useState(true); // Modal trigger
+
   const presaleEnd = new Date('2025-08-12T00:00:00Z');
 
   useEffect(() => {
@@ -31,10 +32,10 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-[#120026] via-[#1A0038] to-[#2D0A51] text-center px-6 pt-8 pb-20 overflow-hidden"
+      className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-[#120026] via-[#1A0038] to-[#2D0A51] text-center px-6 pb-20 overflow-hidden"
     >
-      {/* Hero Section */}
-      <section className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-20 gap-10 text-left">
+      {/* Hero Content */}
+      <section className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 pt-10 gap-8 text-left">
         <div className="md:w-1/2">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-[#b39ddb] mb-4">
             Owlvest: <span className="text-white">Swipe. Match. Invest.</span>
@@ -43,10 +44,12 @@ export default function Hero() {
             Welcome to Owlvest, where we're revolutionizing startup investing!
           </p>
           <p className="text-md sm:text-lg text-gray-400">
-            We're building the <strong className="text-white">Tinder for Startup Investing</strong> – powered by <strong className="text-[#00F08F]">$OwlCoin</strong>.<br />
+            We're building the <strong className="text-white">Tinder for Startup Investing</strong> – powered by <strong className="text-[#00F08F]">$OwlCoin</strong>.
+            <br />
             Discover how we make Web3 investing simple, accessible, and secure for everyone.
           </p>
         </div>
+
         <div className="md:w-1/2 flex justify-center">
           <motion.img
             whileHover={{ scale: 1.05, rotateY: 6, rotateX: 2 }}
@@ -57,27 +60,35 @@ export default function Hero() {
             className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-xl shadow-xl"
           />
         </div>
-       
-
       </section>
-       {/* Presale Coming Soon Section */}
-<div className="mt-10 w-full flex flex-col items-center text-center">
-  <motion.div
-    initial={{ opacity: 0, scale: 0.9 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.6 }}
-    className="bg-[#1A0038] p-8 rounded-2xl shadow-lg w-full max-w-lg border border-[#2D0A51]"
-  >
-    <h2 className="text-3xl font-extrabold text-white mb-4">🚀 Presale Coming Soon</h2>
-    <p className="text-gray-300 text-lg mb-6">
-      Get ready to be part of the future with <span className="text-white font-bold">Owlvest</span>.  
-      Stay tuned for updates!
-    </p>
-    <button className="glow-button px-6 py-3 bg-[#00F08F] text-black font-bold rounded-lg hover:bg-[#00d880] transition">
-      Notify Me
-    </button>
-  </motion.div>
-</div>
+
+      {/* Presale Popup Modal */}
+      {showPresaleModal && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-60 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-[#1A0038] border border-[#2D0A51] p-8 rounded-2xl shadow-2xl max-w-lg w-full text-center"
+          >
+            <h2 className="text-3xl font-extrabold text-white mb-4">🚀 Presale Coming Soon</h2>
+            <p className="text-gray-300 text-lg mb-6">
+              Get ready to be part of the future with <span className="text-white font-bold">Owlvest</span>.  
+              Stay tuned for updates!
+            </p>
+            <button className="glow-button px-6 py-3 bg-[#00F08F] text-black font-bold rounded-lg hover:bg-[#00d880] transition">
+              Notify Me
+            </button>
+            <button
+              onClick={() => setShowPresaleModal(false)}
+              className="mt-4 text-sm text-gray-400 hover:text-white"
+            >
+              Close
+            </button>
+          </motion.div>
+        </div>
+      )}
 
       {/* Custom Glow Styles */}
       <style>{`
