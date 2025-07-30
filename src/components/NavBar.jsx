@@ -20,7 +20,7 @@ const navItems = [
     submenu: [
       { name: 'Our Story', to: '/about-us' },
       { name: 'Whitepaper', to: '/whitepaper' },
-      { name: 'Legal Policies', to: '/LegalPolicies' },
+      { name: 'Legal Policies', to: '/Legal-Policies' },
       { name: 'Partner With Us', to: '/partner' }
     ]
   }
