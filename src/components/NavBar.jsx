@@ -25,30 +25,6 @@ const navItems = [
     ]
   }
 ];
-<ul className="flex space-x-6">
-  {navItems.map((item, index) => (
-    <li key={index} className="relative group">
-      {!item.submenu ? (
-        <a href={item.href} className="text-white hover:text-gray-300">
-          {item.name}
-        </a>
-      ) : (
-        <>
-          <span className="cursor-pointer text-white hover:text-gray-300">
-            {item.name}
-          </span>
-          <ul className="absolute hidden group-hover:block bg-white shadow-md text-black mt-2 rounded z-50">
-            {item.submenu.map((subItem, subIndex) => (
-              <li key={subIndex} className="px-4 py-2 hover:bg-gray-100">
-                <a href={subItem.to}>{subItem.name}</a>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-    </li>
-  ))}
-</ul>
 
 
   const shorten = (addr) => addr?.slice(0, 6) + '...' + addr?.slice(-4);
@@ -215,22 +191,42 @@ const disconnectWallet = async () => {
         </div>
 
         <ul className="hidden md:flex space-x-6 text-sm font-medium">
-          {navItems.map((item, idx) =>
-            item.to ? (
-              <li key={idx}>
-                <Link to={item.to} className="hover:text-green-400">
-                  {item.name}
-                </Link>
-              </li>
-            ) : (
-              <li key={idx}>
-                <a href={item.href} className="hover:text-green-400">
-                  {item.name}
-                </a>
-              </li>
-            )
-          )}
+  {navItems.map((item, idx) =>
+    item.submenu ? (
+      <li key={idx} className="relative group">
+        <span className="cursor-pointer hover:text-green-400 flex items-center gap-1">
+          {item.name}
+          <ChevronDown size={16} />
+        </span>
+        <ul className="absolute hidden group-hover:block bg-[#1B0E3F] text-white mt-2 rounded shadow-lg z-50">
+          {item.submenu.map((sub, subIdx) => (
+            <li key={subIdx}>
+              <Link
+                to={sub.to}
+                className="block px-4 py-2 hover:bg-[#2F1C55] whitespace-nowrap"
+              >
+                {sub.name}
+              </Link>
+            </li>
+          ))}
         </ul>
+      </li>
+    ) : item.to ? (
+      <li key={idx}>
+        <Link to={item.to} className="hover:text-green-400">
+          {item.name}
+        </Link>
+      </li>
+    ) : (
+      <li key={idx}>
+        <a href={item.href} className="hover:text-green-400">
+          {item.name}
+        </a>
+      </li>
+    )
+  )}
+</ul>
+
 
         <div className="hidden md:flex flex-col items-end ml-4 text-right">
           {account ? (
@@ -260,26 +256,43 @@ const disconnectWallet = async () => {
       {isOpen && (
         <div className="md:hidden px-6 pb-4 bg-[#2A1842] space-y-3">
           {navItems.map((item, idx) =>
-            item.to ? (
-              <Link
-                key={idx}
-                to={item.to}
-                className="block text-sm hover:text-green-400"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ) : (
-              <a
-                key={idx}
-                href={item.href}
-                className="block text-sm hover:text-green-400"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </a>
-            )
-          )}
+  item.submenu ? (
+    <div key={idx}>
+      <span className="block text-sm font-medium text-white mt-2">{item.name}</span>
+      <div className="ml-4 space-y-1">
+        {item.submenu.map((sub, subIdx) => (
+          <Link
+            key={subIdx}
+            to={sub.to}
+            className="block text-sm text-gray-300 hover:text-green-400"
+            onClick={() => setIsOpen(false)}
+          >
+            {sub.name}
+          </Link>
+        ))}
+      </div>
+    </div>
+  ) : item.to ? (
+    <Link
+      key={idx}
+      to={item.to}
+      className="block text-sm hover:text-green-400"
+      onClick={() => setIsOpen(false)}
+    >
+      {item.name}
+    </Link>
+  ) : (
+    <a
+      key={idx}
+      href={item.href}
+      className="block text-sm hover:text-green-400"
+      onClick={() => setIsOpen(false)}
+    >
+      {item.name}
+    </a>
+  )
+)}
+
 
           <div className="pt-4">
             {account ? (
