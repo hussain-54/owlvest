@@ -62,30 +62,7 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* Presale Popup Modal */}
-      {showPresaleModal && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-60 backdrop-blur-sm">
-          <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="bg-[#1A0038] border border-[#2D0A51] p-8 rounded-2xl shadow-2xl max-w-lg w-full text-center"
-          >
-            <h2 className="text-3xl font-extrabold text-white mb-4">🚀 Presale Coming Soon</h2>
-            <p className="text-gray-300 text-lg mb-6">
-              Get ready to be part of the future with <span className="text-white font-bold">Owlvest</span>.  
-              Stay tuned for updates!
-            </p>
-            <button 
-              onClick={() => setShowPresaleModal(false)}
-              className="glow-button px-6 py-3 bg-[#00F08F] text-black font-bold rounded-lg hover:bg-[#00d880] transition">
-            
-              Close
-            </button>
-          </motion.div>
-        </div>
-      )}
+  
 
       {/* Custom Glow Styles */}
       <style>{`
